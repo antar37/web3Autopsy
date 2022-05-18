@@ -18,10 +18,9 @@ export const getStaticProps = async () => {
 }
 
 export default function NotionDomainPage(props) {
-  return (
-    <>
-      {'Hello everyone!'}
-      <NotionPage {...props} />
-    </>
-  )
+  React.useEffect(() => {
+    document.querySelector('.notion-table-view').style.padding = 0
+  }, [])
+
+  return <NotionPage {...props} />
 }
